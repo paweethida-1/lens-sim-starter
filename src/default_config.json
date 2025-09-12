@@ -1,0 +1,40 @@
+{
+  "grid": {
+    "side_mm": 50.0,
+    "points": 201
+  },
+  "base_surface": {
+    "a": 0.001
+  },
+  "deformations": [
+    {
+      "type": "gaussian",
+      "amplitude": -0.2,
+      "sigma_mm": 8.0,
+      "x0_mm": 0.0,
+      "y0_mm": 0.0
+    },
+    {
+      "type": "gaussian_ring",
+      "amplitude": 0.15,
+      "r0_mm": 18.0,
+      "sigma_mm": 3.0
+    },
+    {
+      "type": "astigmatism",
+      "k": 5e-05
+    },
+    {
+      "type": "trefoil",
+      "k": 5e-07
+    }
+  ],
+  "noise": {
+    "measurement_rms": 0.01,
+    "random_seed": 42
+  },
+  "output": {
+    "dir": "./outputs",
+    "basename": "lens_sim"
+  }
+}
