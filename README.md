@@ -1,20 +1,42 @@
-### 🔬 Lens Sim Starter — Synthetic Lens Surface Deformation
+# 🔬 Lens Sim Starter  
 
-A compact toolkit to model a base **lens surface** and add **deformations/noise**,  
-then visualize as 3D surface and contour maps. Exports figures and raw arrays for further analysis.
+[![Python](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/)  
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)  
+[![Made with NumPy](https://img.shields.io/badge/NumPy-1.26+-013243?logo=numpy)](https://numpy.org/)  
+[![Matplotlib](https://img.shields.io/badge/Matplotlib-3.8+-11557c?logo=plotly)](https://matplotlib.org/)  
 
-**Features**
-- Base surface: paraboloid `z = a(x^2 + y^2)`
-- Deformations: Gaussian pit/bump, Gaussian ring, Astigmatism, Trefoil
-- Measurement noise (Gaussian RMS)
-- Exports `.png` plots + `.npy` arrays + metrics `.json`
+Synthetic **lens surface deformation simulation**:  
+simulate a paraboloid lens surface, add **custom deformations + noise**, and visualize in **3D + contour**.  
+Exports plots and numerical data for further analysis.  
 
-**Metrics Example (from ./outputs/lens_sim_metrics.json)**
-- Clean: PV ≈ 1.4656 mm, RMS ≈ 0.2983 mm, Mean ≈ 0.4394 mm  
-- Noisy: PV ≈ 1.4941 mm, RMS ≈ 0.2984 mm, Mean ≈ 0.4395 mm  
+---
 
-**Usage**
-```python
-from lens_deformation_sim import simulate_and_plot, default_config
-cfg = default_config()
-simulate_and_plot(cfg, show=False, save_dir="./outputs", basename="lens_sim")
+## 📂 Example Output  
+
+### 🔹 Clean Lens Surface (No Deformation + Noise)  
+<p align="center">
+  <img src="outputs/lens_sim_clean_3d.png" alt="Lens Clean 3D" width="45%"/>
+  <img src="outputs/lens_sim_clean_contour.png" alt="Lens Clean Contour" width="45%"/>
+</p>  
+
+---
+
+### 🔹 Noisy Lens Surface (With Measurement Noise)  
+<p align="center">
+  <img src="outputs/lens_sim_noisy_3d.png" alt="Lens Noisy 3D" width="45%"/>
+  <img src="outputs/lens_sim_noisy_contour.png" alt="Lens Noisy Contour" width="45%"/>
+</p>  
+
+---
+
+## 📊 Metrics (from `lens_sim_metrics.json`)  
+- **Clean Surface** → PV ≈ 1.4656 mm, RMS ≈ 0.2983 mm, Mean ≈ 0.4394 mm  
+- **Noisy Surface** → PV ≈ 1.4941 mm, RMS ≈ 0.2984 mm, Mean ≈ 0.4395 mm  
+
+---
+
+## 🚀 Usage  
+
+Run with default parameters:
+```bash
+python lens_deformation_sim.py
